@@ -1,0 +1,8 @@
+{% include 'header.htm' %}
+<h1>Some of my favourite anime:</h1>
+<ul>
+{% for anime in anime_list %}
+    <li>{{ anime }}</li>
+{% endfor %}
+</ul>
+{% include 'footer.htm' %}

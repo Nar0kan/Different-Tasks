@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <base href="https://indexfile.net/">
+    <title>This is index.htm</title>
+</head>
+<body>
+
+<ul>
+{% for game in games -%}
+    <li>{{ game.title }}
+        <ul>
+        <li>{{ game.genre | lower}}
+        </ul>
+{% endfor %}
+</ul>
+
+</body>
+</html>
