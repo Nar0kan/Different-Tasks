@@ -1,11 +1,14 @@
 def safe_pawns(pawns: set) -> int:
-    # count will be returned as number of 'safe' pawns
+    """
+        Return number of 'safe' pawns by taking pawns position inside.
+    """
     global count
     count = 0
     safe_list = []
     
-    # check for pawns on borders
+    # Check for pawns on borders
     def left_border(i, pawns):
+        global count
         for el in pawns:
             if el[0] == chr(ord(i[0]) + 1) and int(el[1]) == int(i[1])-1 and i not in safe_list:
                 count += 1
@@ -22,7 +25,7 @@ def safe_pawns(pawns: set) -> int:
                 #print(i, ", safe")
         return count
 
-    # check for pawns inside
+    # Check for pawns inside playdesk
     def inside(i, pawns):
         global count
         for el in pawns:
@@ -36,7 +39,7 @@ def safe_pawns(pawns: set) -> int:
                 #print(i, ", safe")
         return count
 
-    # main loop, that maintain upper functions, depending on each pawn spot
+    # Main loop, that maintain upper functions, depending on each pawn spot
     
     for element in pawns:
         if '1' in element:
@@ -47,9 +50,11 @@ def safe_pawns(pawns: set) -> int:
             right_border(element, pawns)
         else:
             inside(element, pawns)
-    
+
     return count
 
-
-print(safe_pawns({"b4", "d4", "f4", "c3", "e3", "g5", "d2"}), '\t',
-      safe_pawns({"b4", "c4", "d4", "e4", "f4", "g4", "e5"}))
+if __name__ == "__main__":
+    print(safe_pawns({"b4", "d4", "f4", "c3", "e3", "g5", "d2"}))   # 6
+    print(safe_pawns({"b4", "c4", "d4", "e4", "f4", "g4", "e5"}))   # 1
+    print(safe_pawns({"b4", "c4", "d4"}))   # 0
+    print(safe_pawns({"b4", "d4", "c3"}))   # 1

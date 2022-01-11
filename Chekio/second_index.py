@@ -1,15 +1,17 @@
-def second_index(text: str, symbol: str) -> [int, None]:
+def second_index(text: str, symbol: str) -> int or None:
     """
-        returns the second index of a symbol in a given text
+        Find and return the second index of symbol (second argument) in text (first argument) as int number.
+        If there is no such symbol or symbol have only one appearence - return None.
     """
-    # your code here
     try:
-        k = text.index(symbol, text.index(symbol)+1, len(text))
+        result = text.index(symbol, text.index(symbol)+1, len(text))
     except:
-        k = None
-    return k
+        result = None
+    return result
 
 if __name__ == '__main__':
-    print('Example:')
-    print(second_index("sims", "s"), second_index(" hi", " "),
-        second_index("hi mayor", " "), second_index("hi mr Mayor", " "))
+    print('Example: ')
+    print(second_index("sims", "s"))    # 3
+    print(second_index(" hi", " ")) # None
+    print(second_index("hi mayor", " "))    # None
+    print(second_index("hi mr Mayor", " ")) # 5

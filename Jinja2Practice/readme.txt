@@ -1,6 +1,6 @@
 In this folder i used to practice with Jinja2 package.
 The code is particulary taken from https://www.youtube.com/playlist?list=PLA0M1Bcd0w8wfmtElObQrBbZjY6XeA06U
-where the author is clearly describing all of basic functionality that Jinja2 have on Rusian language.
+where the author is clearly describing all of basic functionality that Jinja2 is hiding.
 Also some material is taken from https://jinja.palletsprojects.com/en/2.11.x/templates/#builtin-filters
 and other sources.
 Now about the files.

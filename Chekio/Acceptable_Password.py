@@ -1,5 +1,5 @@
-# the length should be bigger than 6;
-# should contain at least one digit.
+# The length should be bigger than 6;
+# Should contain at least one digit.
 
 def is_acceptable_password_2(password: str) -> bool:
     # your code here
@@ -15,8 +15,8 @@ if __name__ == '__main__':
     print(is_acceptable_password_2('sh5'))             #== False
 
 
-# the length should be bigger than 6;
-# should contain at least one digit, but cannot consist of just digits.
+# The length should be bigger than 6;
+# Should contain at least one digit, but cannot consist of just digits.
 def is_acceptable_password_3(password: str) -> bool:
     # your code here
     return True if len(password)>6 and not(password.isnumeric()) and any([x.isdigit() for x in password]) else False

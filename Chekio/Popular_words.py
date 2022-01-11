@@ -1,38 +1,24 @@
-def popular_words(text: str, words: list) -> dict:
-    # your code here
+def count_popular_words(text: str, words: list) -> dict:
+    """
+        Count popular words (that you give as second argument) in text line with ''' format.
+    """
     result = {}
-    temp_2 = []
-    temp_3 = []
-    
     text = text.lower()
-    temp_1 = text.split("\n")
+    for symbol in range(0, len(text)):
+        if text[symbol] == "\n":
+            text = text[:symbol] + " " + text[symbol+1:]
     
-    for i in temp_1:
-        if i:
-            temp_2.append(i.split(" "))
-
-
-    for j in temp_2:
-        for i in j:
-            temp_3.append(i)
-
-    print(temp_3)
-    
-    for k in words:
-        lim = 0
-        if k in temp_3:
-            for element in temp_3:
-                if element == k:
-                    lim+=1
-        result[k] = lim
+    text_list = text.split(" ")
+    print(text_list)
+    for word in words:
+        result[word] = text_list.count(word)
     return result
 
-
 if __name__ == '__main__':
-    print("Example:")
-    print(popular_words('''
-When I was One
-I had just begun
-When I was Two
-I was nearly new
-''', ['i', 'was', 'three', 'near']))
+    print("Example: ")
+    print(count_popular_words(
+    '''When I was One
+    I had just begun
+    When I was Two
+    I was nearly new''', 
+    ['i', 'was', 'three', 'near']))    # {'i': 4, 'was': 3, 'three': 0, 'near': 0}
