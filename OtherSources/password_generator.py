@@ -1,8 +1,8 @@
-from random import randint
-
 # We can use password length and restricted symbols as arguments is this function
-def generate_password(length = 12, restricted_symbols = ""):
-    # Creating variables for symbols (that'll be used in password) and password strings
+def generate_password(length = 12, restricted_symbols = "") -> str:
+    from random import randint
+    """Creating variables for symbols (that'll be used in password) and password strings."""
+    
     symbols = "abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/.';\"[]}{|\\?,!#$%^&*@)(-+="
     password = ""
 
@@ -12,7 +12,7 @@ def generate_password(length = 12, restricted_symbols = ""):
             symbols = symbols[:symbols.find(el)] + symbols[symbols.find(el)+1:]
         except IndexError:
             # That means duplicates in restricted symbols variable
-            pass
+            print("Duplicates were found in restricted symbols variable.")
     
     # Looping length of password times to fill the password string
     for i in range(0, length):
