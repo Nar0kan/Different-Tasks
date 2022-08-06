@@ -13,7 +13,7 @@ def main():
 
     # Create GUI.
     root = Tk()
-    root.title("Password degenerator")
+    root.title("PassGEN")
 
     # Initialize entry for password output.
     password_entry = Entry(root, textvariable=generate_password(), font='arial', bg='#1E2020', fg='white')
