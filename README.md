@@ -6,12 +6,5 @@ Folders brief info:
     OtherSources - don't ask me, ask google.
     RegEx - re Python package that is used for operations with templates. Few tasks were done, but only for now.
     My_Web_App - it's my web app with gallery and some backend features that I'll add as soon as possible.
-
-Soo, if you want My_Web_App to start you need previously download some packages: pip, django, dotenv.
-Also consider to create a file .git in Django_2022/cloudwirefire/cloudwirefire/ folder and match the variable
-SECRET_KEY to your Django secret key. BTW forgot to remove it in one of my commits before lol.
-Anyway you can also just enter this SECRET_KEY in settings.py at the same directory.
-
-
-
+    TelegramBot_PassGen - the Telegram bot built with telebot package that can generate passwords for you with a few arguments.
 Cool, let's move on.
