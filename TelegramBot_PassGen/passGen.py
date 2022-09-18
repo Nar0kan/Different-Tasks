@@ -37,7 +37,7 @@ class Password:
         self.password = ''.join(new_password)
 
         try:
-            while not self.check_password():
+            if not self.check_password():
                 print("""Some of the arguments are incorrect.
                         Default arguments loaded.""")
                 self.__init__(Password.DEFAULT_ARGS)

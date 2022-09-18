@@ -46,7 +46,7 @@ def simple_handler(message):
             key = arg[0]
             new_value = arg[1]
 
-            if key:
+            if key and new_value:
                 ARGS[key] = str(new_value)
         
         PASSWORD = Password(ARGS)
